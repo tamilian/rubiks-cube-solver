@@ -7,9 +7,9 @@ const int microStep = 0; // ENABLE pin
 // Stepper motor object
 AccelStepper testStepper(AccelStepper::DRIVER, stepPin, dirPin);
 
-int speed = 7000;  // Maximum speed
-int acceleration = 10000;  // Acceleration value
-int stepsFor90Degrees = 200;  // Steps for 90 degrees (adjust this value)
+int speed = 7000;  // mjaximum speed
+int acceleration = 10000;  // acceleration value
+int stepsFor90Degrees = 200;  // steps for 90 degrees (adjust this value)
 
 void setup() {
   Serial.begin(115200);
