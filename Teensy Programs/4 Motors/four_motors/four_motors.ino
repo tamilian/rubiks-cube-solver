@@ -17,7 +17,7 @@ const int dirPin4 = 8;
 
 const int stepsFor90Degrees = 50;  // 90° ÷ 1.8° = 50 steps
 
-// Create instances of the AccelStepper class
+// create instances of the AccelStepper class
 AccelStepper stepper1(AccelStepper::DRIVER, stepPin1, dirPin1);
 AccelStepper stepper2(AccelStepper::DRIVER, stepPin2, dirPin2);
 AccelStepper stepper3(AccelStepper::DRIVER, stepPin3, dirPin3);
@@ -26,7 +26,7 @@ AccelStepper stepper4(AccelStepper::DRIVER, stepPin4, dirPin4);
 void setup() {
   Serial.begin(115200);
   
-  // Set the maximum speed and acceleration for each motor
+  // set the maximum speed and acceleration for each motor
   stepper1.setMaxSpeed(1000);
   stepper1.setAcceleration(500);
 

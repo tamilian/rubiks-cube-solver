@@ -1,6 +1,6 @@
 #include <AccelStepper.h>
 
-// Define stepper motor connections and motor interface type
+// define stepper motor connections and motor interface type
 const int enablePin = 0;
 
 const int stepPin1 = 1;
@@ -22,7 +22,7 @@ AccelStepper stepper3(AccelStepper::DRIVER, stepPin3, dirPin3);
 void setup() {
   Serial.begin(115200);
   
-  // Set the maximum speed and acceleration for each motor
+  // set the maximum speed and acceleration for each motor
   stepper1.setMaxSpeed(1000);
   stepper1.setAcceleration(500);
 
@@ -33,12 +33,12 @@ void setup() {
   stepper3.setAcceleration(500);
 
   pinMode(enablePin, OUTPUT);
-  digitalWrite(enablePin, LOW);  // Enable the motors
+  digitalWrite(enablePin, LOW);  
 } 
 
 void loop() {
   if (Serial.available() > 0) {
-    char command = Serial.read();  // Read the incoming command
+    char command = Serial.read();  // read the incoming command
     switch (command) {
       case 'A':
         stepper1.move(stepsFor90Degrees);
@@ -76,7 +76,7 @@ void loop() {
     }
   }
 
-  // Run the steppers
+  // run the steppers
   stepper1.run();
   stepper2.run();
   stepper3.run();
