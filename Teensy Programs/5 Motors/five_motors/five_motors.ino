@@ -1,6 +1,6 @@
 #include <AccelStepper.h>
 
-// Define stepper motor connections and motor interface type
+// define stepper motor connections and motor interface type
 const int enablePin = 0;
 
 const int stepPin1 = 1;
