@@ -1,6 +1,5 @@
 #include <AccelStepper.h>
 
-// Define stepper motor connections and motor interface type
 const int enablePin = 0;
 
 const int stepPin1 = 1;
@@ -9,18 +8,18 @@ const int dirPin1 = 2;
 const int stepPin2 = 3;
 const int dirPin2 = 4;  
 
-int speed = 7000;  // Maximum speed
-int acceleration = 10000;  // Acceleration value
-int stepsFor90Degrees = 200;  // Steps for 90 degrees in quarter-step mode
+int speed = 7000;  // maximum speed
+int acceleration = 10000;  // acceleration value
+int stepsFor90Degrees = 200;  // steps for 90 degrees in quarter-step mode
 
-// Create two instances of the AccelStepper class
+// create two instances of the AccelStepper class
 AccelStepper stepper1(AccelStepper::DRIVER, stepPin1, dirPin1);
 AccelStepper stepper2(AccelStepper::DRIVER, stepPin2, dirPin2);
 
 void setup() {
   Serial.begin(115200);
   
-  // Set the maximum speed and acceleration for each motor
+  // set the maximum speed and acceleration for each motor
   stepper1.setMaxSpeed(speed);
   stepper1.setAcceleration(acceleration);
 
@@ -28,11 +27,7 @@ void setup() {
   stepper2.setAcceleration(acceleration);
 
   pinMode(enablePin, OUTPUT);
-  digitalWrite(enablePin, HIGH);  // Enable the motor and configure for quarter-step (if needed)
-
-  // Set initial position to zero
-  stepper1.setCurrentPosition(0);
-  stepper2.setCurrentPosition(0);
+  digitalWrite(enablePin, HIGH); 
 
   Serial.println("Stepper motor test program ready.");
   Serial.println("Commands:");
